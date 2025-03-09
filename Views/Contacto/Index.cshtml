@@ -1,24 +1,34 @@
+@model apptienda.Models.Contacto
+
 @{
     ViewBag.Title = "Contacto";
 }
 
-<h1>Contacto</h1>
+<h1>Contacto</h1>  
 <h2>Para contactar con nosotros, por favor rellene el siguiente formulario:</h2>
 
-<form method="post" asp-action="Registrar">
-    <div class="form-group">
-        <label for="nombre">Nombres</label>
-        <input type="text" class="form-control" id="nombre" name="nombre"/>
-    </div>
-    <div class="form-group mt-2">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email"/>
-    </div>
-    <div class="form-group mt-2">
-        <label for="mensaje">Mensaje</label>
-        <textarea class="form-control" id="mensaje" name="mensaje"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary mt-2">Enviar</button>
-</form>
+<form method="post" asp-action="Registrar">  
+    <div class="form-group">  
+        <label asp-for="Nombre" class="control-label"></label>  
+        <input asp-for="Nombre" class="form-control" />  
+        <span asp-validation-for="Nombre" class="text-danger"></span>  
+    </div>  
+    <div class="form-group mt-2">  
+        <label asp-for="Email" class="control-label"></label>  
+        <input asp-for="Email" class="form-control" />  
+        <span asp-validation-for="Email" class="text-danger"></span>  
+    </div>  
+    <div class="form-group mt-2">  
+        <label asp-for="Mensaje" class="control-label"></label>  
+        <textarea asp-for="Mensaje" class="form-control"></textarea>  
+        <span asp-validation-for="Mensaje" class="text-danger"></span>  
+    </div>  
+    <button type="submit" class="btn btn-primary mt-2">Enviar</button>  
+</form> 
 
-<h1>@ViewData["message"]</h1>
+
+<h1>@ViewData["message"]</h1>  
+
+@section Scripts {  
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}  
+}  

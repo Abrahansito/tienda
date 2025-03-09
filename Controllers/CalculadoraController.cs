@@ -26,6 +26,7 @@ namespace APPTIENDA.Controllers
         [HttpPost]
         public IActionResult Calcular( Calcular calc)
         {
+            _logger.LogInformation("Operacion: {0}, Operador1: {1}, Operador2: {2}", calc.Operacion, calc.Operador1, calc.Operador2);
             if (ModelState.IsValid)
             {
                 string mensaje = "";
