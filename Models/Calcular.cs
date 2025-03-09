@@ -7,11 +7,11 @@ namespace APPTIENDA.Models
 {
     public class Calcular
     {
-        string? Operacion { get; set; }
-        double  Operador1 { get; set; } 
-        double  Operador2 { get; set; }     
+        public string? Operacion { get; set; }
+        public double  Operador1 { get; set; } 
+        public double  Operador2 { get; set; }     
 
-    public double Calculo (string Operacion, double Operador1, double Operador2)
+    public double Calculo()
     {
         double Resultado = 0;
         switch (Operacion)
@@ -35,9 +35,5 @@ namespace APPTIENDA.Models
         return Resultado;
      }
 
-        internal object? Calculo()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

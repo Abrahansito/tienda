@@ -33,7 +33,7 @@ namespace APPTIENDA.Controllers
                 {
                     mensaje = $"El resultado es: {calc.Calculo()}";
                 }
-                catch (DivideByZeroException )
+                catch (DivideByZeroException)
                 {
                     mensaje= "No se puede dividir por cero";
                 }
